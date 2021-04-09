@@ -1,0 +1,14 @@
+@import "app/variables.scss";
+@import "app/mixins.scss";
+
+.EntitySetManageMenu {
+  .bp3-input-group {
+    border-radius: $aleph-border-radius;
+  }
+
+  .bp3-divider {
+    margin: $aleph-grid-size/2 !important;
+  }
+
+
+}

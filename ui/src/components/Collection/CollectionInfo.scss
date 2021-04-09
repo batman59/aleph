@@ -1,0 +1,44 @@
+@import "app/variables.scss";
+@import "app/mixins.scss";
+
+.CollectionInfo {
+  &__item {
+    margin-bottom: 15px;
+    overflow: hidden;
+    display: flex;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    .key, .value {
+      flex: 1 1;
+    }
+
+    .key {
+      @include rtlSupportInvertedProp(margin, right, $aleph-grid-size*2, null);
+      flex-basis: 35%;
+      min-width: 90px;
+      color: $gray1 !important;
+    }
+
+    .value {
+      flex-basis: 65%;
+      @include rtl(text-align, right, left);
+
+      & > * {
+        display: block;
+        margin-bottom: $aleph-grid-size/2;
+        @include breakText;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+
+      .separator {
+        display: none;
+      }
+    }
+  }
+}

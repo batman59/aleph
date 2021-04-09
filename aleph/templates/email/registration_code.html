@@ -1,0 +1,9 @@
+{% extends "email/layout.html" %}
+
+{% block content %}
+  <p>
+    {% trans %}
+      To complete your registration, please visit <a href="{{url}}">our signup page</a>.
+    {% endtrans %}
+  </p>
+{% endblock %}
