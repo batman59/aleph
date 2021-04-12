@@ -1,0 +1,38 @@
+@import "app/variables.scss";
+@import "app/layouts.scss";
+@import "app/mixins.scss";
+
+.DualPane {
+  padding: $aleph-content-padding;
+  @media screen and (max-width: $aleph-screen-sm-max-width) {
+    padding: $aleph-mobile-content-padding;
+  }
+
+  &__inner-container {
+    @extend .pane-layout;
+  }
+}
+
+.DualPane .ContentPane {
+  @extend .pane-layout-main;
+  padding: 0;
+  @include rtlSupportInvertedProp(padding, left, $aleph-content-padding, null);
+
+  @media screen and (max-width: $aleph-screen-sm-max-width) {
+    order: 2;
+    padding: $aleph-grid-size 0 !important;
+  }
+}
+
+.DualPane .SidePane {
+  @extend .pane-layout-side;
+  @include rtlSupportInvertedProp(border, right, 1px solid $aleph-border-color, null);
+  @include rtlSupportInvertedProp(padding, right, $aleph-content-padding, null);
+
+  @media screen and (max-width: $aleph-screen-sm-max-width) {
+    margin-bottom: 1em;
+    @include rtlSupportInvertedProp(border, right, none, null);
+    @include rtlSupportInvertedProp(padding, right, 0, null);
+    border-bottom: 1px solid $aleph-border-color;
+  }
+}

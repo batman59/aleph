@@ -1,0 +1,24 @@
+@import "app/variables.scss";
+@import "app/mixins.scss";
+
+.AuthButtons {
+  display: inline-flex;
+  @media screen and (max-width: $aleph-screen-md-max-width) {
+    @include rtlSupportInvertedProp(margin, left, 0, none);
+  }
+
+  .menu-item-width {
+    min-width: 0 !important;
+  }
+
+  &__popover {
+    border-radius: 0 !important;
+    background-color: #3a454d !important;
+
+    .bp3-menu-item.mobile-show {
+      @media screen and (min-width: $aleph-navbar-mobile-max-width) {
+        display: none;
+      }
+    }
+  }
+}

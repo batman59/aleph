@@ -1,0 +1,40 @@
+@import "app/variables.scss";
+@import "app/mixins.scss";
+
+.CollectionXrefMode {
+    .CollectionXrefContextInfo {
+        margin-bottom: $aleph-content-padding;
+    }
+
+    .CollectionXrefManageMenu {
+      margin-bottom: $aleph-content-padding;
+      @include rtl(float, right, left);
+    }
+
+    .pane-layout-side {
+        @include rtlSupportInvertedProp(margin, right, $aleph-content-padding, null);
+        width: $aleph-sidebar-width * 0.8;
+    }
+
+    table.data-table {
+        table-layout:fixed;
+
+        th.numeric.narrow, td.numeric.narrow {
+            width: 4em;
+        }
+
+        th.expand, td.expand {
+            width: 2em;
+        }
+
+        td.entity, td.collection {
+            .EntityLink, .CollectionLink {
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+}

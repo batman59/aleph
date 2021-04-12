@@ -1,0 +1,10 @@
+@import "app/variables.scss";
+@import "app/mixins.scss";
+
+.Role {
+    white-space: nowrap;
+
+    .bp3-icon {
+        @include rtlSupportInvertedProp(margin, right, $aleph-icon-padding, null);
+    }
+}
